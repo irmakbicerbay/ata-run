@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" width="140" height="140">
+  <rect width="140" height="140" rx="14" fill="#fdf6eb" stroke="#d8c8af" stroke-width="4"/>
+  <rect x="12" y="12" width="116" height="116" rx="12" fill="#fff9f0" stroke="#d8c8af" stroke-width="3"/>
+  <text x="70" y="52" font-family="'Trebuchet MS',sans-serif" font-weight="900" font-size="28" text-anchor="middle" fill="#c53f39">EXAM</text>
+  <g stroke="#c53f39" stroke-width="4" fill="none" stroke-linecap="round">
+    <path d="M32 70l10 10"/>
+    <path d="M42 70l-10 10"/>
+    <path d="M32 90l10 10"/>
+    <path d="M42 90l-10 10"/>
+  </g>
+  <g stroke="#d4a247" stroke-width="4" stroke-linecap="round">
+    <path d="M58 76h50"/>
+    <path d="M58 96h40"/>
+  </g>
+  <rect x="62" y="20" width="16" height="8" rx="3" fill="#f4d9c6"/>
+</svg>

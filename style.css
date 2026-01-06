@@ -1,0 +1,320 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at 20% 20%, #1b2240, #0b1024 36%, #060915);
+  color: #eaf2ff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.frame {
+  width: min(1100px, 96vw);
+}
+
+.hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 10px;
+}
+
+.logo {
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #7cffe2;
+  font-size: 20px;
+}
+
+.sub {
+  margin-top: 4px;
+  opacity: 0.75;
+  font-size: 14px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+  width: min(520px, 100%);
+}
+
+.stat {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 8px 12px;
+  min-width: 100px;
+}
+
+.label {
+  display: block;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.value {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.play-area {
+  position: relative;
+  background: #060915;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.panel {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(6, 9, 21, 0.4), rgba(6, 9, 21, 0.6)),
+    url("assets/login page.png") center/cover no-repeat;
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.panel.hidden {
+  display: none;
+}
+
+.panel.image-only {
+  cursor: pointer;
+  background: url("assets/login page.png") center/cover no-repeat;
+  backdrop-filter: none;
+}
+
+.panel.image-only .panelBox {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: auto; /* allow overlay buttons to receive clicks */
+  position: relative;
+}
+
+.panel.image-only h1,
+.panel.image-only p,
+.panel.image-only #startBtn {
+  display: none;
+}
+
+.panel.image-only .character-select {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  height: 100%;
+  pointer-events: auto; /* allow clicks to pass to overlay buttons */
+}
+
+.panel.image-only .character-select span {
+  display: none;
+}
+
+.panel.image-only .character-buttons {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.panel.image-only #boyBtn,
+.panel.image-only #girlBtn {
+  position: absolute;
+  width: 190px;
+  height: 70px;
+  opacity: 0.001; /* invisible but clickable */
+  background: transparent;
+  border: none;
+  padding: 0;
+  pointer-events: auto;
+}
+
+.panel.image-only #boyBtn {
+  left: 25%;
+  bottom: 2%;
+  transform: translateX(-50%);
+}
+.panel.image-only #girlBtn {
+  left: 75%;
+  bottom: 2%;
+  transform: translateX(-50%);
+}
+
+/* Game over theme */
+.panel.theme-game-over {
+  background: url("assets/game-over.png") center/cover no-repeat;
+  backdrop-filter: none;
+}
+
+.panel.theme-game-over .panelBox {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  text-align: center;
+  color: #ffd9a1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 100%;
+  position: relative;
+  pointer-events: none; /* only button should be clickable */
+  padding: 0;
+}
+
+.panel.theme-game-over h1 {
+  display: none;
+}
+
+.panel.theme-game-over p {
+  display: block;
+  color: #ffe6c9;
+  text-shadow: 0 0 12px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+
+.panel.theme-game-over #startBtn {
+  position: absolute;
+  left: 50%;
+  bottom: 18%;
+  transform: translateX(-50%);
+  min-width: 260px;
+  height: 90px;
+  margin: 0;
+  font-size: 18px;
+  background: transparent; /* use baked button in image */
+  color: transparent;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.panelBox {
+  background: rgba(8, 16, 38, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 18px 18px 14px;
+  width: min(520px, 94vw);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+  display: grid;
+  gap: 12px;
+}
+
+.panelBox h1 {
+  margin: 0;
+  font-size: 26px;
+}
+
+.panelBox p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.character-select {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  justify-content: center;
+}
+
+.character-buttons {
+  display: inline-flex;
+  gap: 10px;
+}
+
+.character-select button {
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 800;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #4f9cff, #3f7ddb);
+  color: #081931;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.1s ease;
+}
+
+.character-select button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+}
+
+.character-select button:active {
+  transform: translateY(1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+}
+
+.character-select button.active {
+  filter: brightness(1.05);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
+.character-select.hidden {
+  display: none;
+}
+
+button {
+  padding: 12px 16px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #7cffe2, #5ec2ff);
+  color: #061029;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+  transform: translateY(1px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+.hint {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-top: -4px;
+}

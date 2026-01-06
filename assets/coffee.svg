@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 120" width="96" height="120">
+  <rect width="96" height="120" rx="10" fill="#0b0f19"/>
+  <path d="M24 30h52l-6 56c-1 8-7 14-14 14H44c-7 0-13-6-14-14z" fill="#f0e6d8" stroke="#c9b8a0" stroke-width="4"/>
+  <rect x="22" y="22" width="56" height="12" rx="6" fill="#c9b08e"/>
+  <rect x="28" y="58" width="40" height="18" rx="8" fill="#c9b08e"/>
+  <rect x="32" y="62" width="32" height="10" rx="5" fill="#f6e7c6"/>
+  <text x="48" y="72" font-family="'Trebuchet MS',sans-serif" font-weight="800" font-size="18" text-anchor="middle" fill="#6a4a2a">COFFEE</text>
+  <path d="M40 22c4-6 4-10 0-14" stroke="#f6e7c6" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M52 22c4-6 4-10 0-14" stroke="#f6e7c6" stroke-width="3" fill="none" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 110" width="140" height="110">
+  <rect width="140" height="110" rx="12" fill="#f7f0e6" stroke="#d2c3ad" stroke-width="4"/>
+  <rect x="10" y="12" width="120" height="86" rx="10" fill="#fff8f0" stroke="#d2c3ad" stroke-width="3"/>
+  <text x="70" y="52" font-family="'Trebuchet MS',sans-serif" font-weight="800" font-size="26" text-anchor="middle" fill="#c7483d">DEADLINE</text>
+  <path d="M20 60l6 8 10-6" stroke="#e2b44f" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M110 68l-6 8-10-6" stroke="#f28f6b" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M50 28l4 6 8-4" stroke="#f28f6b" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M88 28l-4 6-8-4" stroke="#e2b44f" stroke-width="5" fill="none" stroke-linecap="round"/>
+</svg>

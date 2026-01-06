@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ATA Run: Warsaw Semester Sprint</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="frame">
+    <header class="hud">
+      <div>
+        <div class="logo">ATA Run</div>
+        <div class="sub">Jump over deadlines/exams, collect ECTS & coffee.</div>
+      </div>
+      <div class="stats">
+        <div class="stat"><span class="label">Score</span><span id="score" class="value">0</span></div>
+        <div class="stat"><span class="label">ECTS</span><span id="ects" class="value">0</span></div>
+        <div class="stat"><span class="label">Coffee</span><span id="coffee" class="value">0</span></div>
+        <div class="stat"><span class="label">Best</span><span id="best" class="value">0</span></div>
+      </div>
+    </header>
+
+    <main class="play-area">
+      <canvas id="game" width="960" height="420" aria-label="ATA Run game canvas"></canvas>
+      <div id="panel" class="panel">
+        <div class="panelBox">
+          <h1 id="panelTitle">Pick your runner</h1>
+          <p id="panelText">Click Boy or Girl to start. Space/↑ = jump, R = restart.</p>
+          <div class="character-select" id="characterSection">
+            <span>Character:</span>
+            <div class="character-buttons">
+              <button id="boyBtn" type="button" class="active">Boy</button>
+              <button id="girlBtn" type="button">Girl</button>
+            </div>
+          </div>
+          <button id="startBtn" type="button">Start</button>
+          <p class="hint">Collect ECTS & coffee, avoid deadlines & exams.</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
